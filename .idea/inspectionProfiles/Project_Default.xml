@@ -1,0 +1,55 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="HtmlUnknownAttribute" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="myValues">
+        <value>
+          <list size="1">
+            <item index="0" class="java.lang.String" itemvalue="name" />
+          </list>
+        </value>
+      </option>
+      <option name="myCustomValuesEnabled" value="true" />
+    </inspection_tool>
+    <inspection_tool class="PyInterpreterInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="test.publish.models.Post.DoesNotExist" />
+          <option value="test.publish.models.Post.objects" />
+          <option value="test.app.models.User.DoesNotExist" />
+          <option value="openpyxl.open" />
+          <option value="publish.models.Post.objects" />
+          <option value="publish.models.Post.DoesNotExist" />
+          <option value="message_site.send_message.models.MessageToUser.objects" />
+          <option value="django.db.models.fields.related.OneToOneField.username" />
+          <option value="message_site.send_message.models.Profile.objects" />
+          <option value="django.db.models.fields.related.OneToOneField.id" />
+          <option value="hello.config.urls.*" />
+          <option value="django.db.models.fields.PositiveIntegerField.__mul__" />
+          <option value="django.db.models.fields.related.ForeignKey.price" />
+          <option value="profiles.models.Profile.objects" />
+          <option value="profiles.models.Profile.DoesNotExist" />
+          <option value="profiles.models.Profile.post_set" />
+          <option value="clothing.models.CartProduct.objects" />
+          <option value="clothing.models.Product.objects" />
+          <option value="clothing.models.Cart.objects" />
+          <option value="clothing.models.Order.objects" />
+          <option value="tutorial.snippets.models.Snippet.objects" />
+          <option value="tutorial.snippets.models.Snippet.DoesNotExist" />
+          <option value="rest_framework.response.Response.delete" />
+          <option value="tests.models.Test.objects" />
+          <option value="tests.models.Choice.objects" />
+          <option value="tests.models.Question.objects" />
+          <option value="tests.models.Choice.DoesNotExist" />
+          <option value="tests.models.TestComplate.objects" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="SpellCheckingInspection" enabled="false" level="TYPO" enabled_by_default="false">
+      <option name="processCode" value="true" />
+      <option name="processLiterals" value="true" />
+      <option name="processComments" value="true" />
+    </inspection_tool>
+  </profile>
+</component>
