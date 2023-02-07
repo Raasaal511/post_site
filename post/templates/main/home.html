@@ -4,8 +4,15 @@
 
 {% block content %}
 <div>
-    {% for post in post %}
-        <p>{{ post }}</p>
+    {% for post in posts  %}
+    <a href="{% url 'post_detail' post.slug %}">
+        <div>
+            <h4>{{ post.title }}</h4>
+            <p>
+                {{ post.body }}
+            </p>
+        </div>
+    </a>
     {% endfor %}
 </div>
 {% endblock %}

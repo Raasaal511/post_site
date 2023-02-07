@@ -1,10 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'main/base.html' %}
 
-</body>
-</html>
+{% block title %}Post detail{% endblock %}
+
+{% block content %}
+<div>
+    <h4>{{ post.title }}</h4>
+    <p>{{ post.body }}</p>
+
+    <div>
+        {% for comment in comments %}
+            <div>
+                <p>{{ comment }}</p>
+            </div>
+        {% endfor %}
+    </div>
+
+    <h3>Add comment:</h3>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Add</button>
+    </form>
+</div>
+{% endblock %}
