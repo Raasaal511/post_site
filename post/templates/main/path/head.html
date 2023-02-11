@@ -1,0 +1,20 @@
+<div class="mt-3 mb-3">
+    <ul class="nav justify-content-center nav-pills">
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'home' %}">Home</a>
+        </li>
+        {% if user.is_authenticated %}
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'users:profile' %}">Profile</a>
+        </li>
+        {% else %}
+        <li class="nav-item">
+            <a class="nav-link" href="">LogIn</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="">LogUp</a>
+        </li>
+        {% endif %}
+    </ul>
+
+</div>
