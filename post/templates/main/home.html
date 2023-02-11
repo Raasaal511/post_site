@@ -9,7 +9,7 @@
        class="list-group-item list-group-item-action flex-column align-items-start">
     <div class="d-flex w-1 justify-content-between">
         <h5 class="mb-1">{{ post.title }}</h5>
-        <small>{{ post.create_at|'%Y' }}</small>
+        <small>{{ post.create_at|date:"D d M Y" }}</small>
     </div>
         <p class="mb-1">{{ post.discription|truncatewords:17 }}</p>
         <small>Donec id elit non mi porta.</small>
