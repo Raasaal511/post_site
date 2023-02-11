@@ -3,16 +3,18 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-<div>
-    {% for post in posts  %}
-    <a href="{% url 'post_detail' post.slug %}">
-        <div>
-            <h4>{{ post.title }}</h4>
-            <p>
-                {{ post.body }}
-            </p>
-        </div>
+<div class="list-group w-25 m-3">
+{% for post in posts  %}
+    <a href="{% url 'post_detail' post.slug %}"
+       class="list-group-item list-group-item-action flex-column align-items-start">
+    <div class="d-flex w-1 justify-content-between">
+        <h5 class="mb-1">{{ post.title }}</h5>
+        <small>{{ post.create_at|'%Y' }}</small>
+    </div>
+        <p class="mb-1">{{ post.discription|truncatewords:17 }}</p>
+        <small>Donec id elit non mi porta.</small>
     </a>
-    {% endfor %}
+
+{% endfor %}
 </div>
 {% endblock %}
