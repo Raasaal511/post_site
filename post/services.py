@@ -1,4 +1,5 @@
 from django.shortcuts import redirect, render, get_object_or_404
+from django.template.defaultfilters import slugify
 
 from post.forms import PostForm
 from post.models import Post
@@ -13,7 +14,9 @@ def post_create(request):
         if form.is_valid():
             post = form.save(commit=False)
             post.author = request.user
+            post.slug = slugify(post.title)
             post.save()
+            return redirect('users:profile')
 
     return render(request, 'main/form/post_create.html', {'form': form})
 
@@ -26,7 +29,7 @@ def post_udpate(request, slug):
         form.save()
         return redirect('profile')
 
-    return render(request, 'main/form/post_udpate.html', {'post': post, 'form': form})
+    return render(request, 'main/form/post_update.html', {'post': post, 'form': form})
 
 
 def post_delete(request, slug):
@@ -34,7 +37,7 @@ def post_delete(request, slug):
 
     if request.method == 'POST':
         post.delete()
-        return redirect('profile')
+        return redirect('users:profile')
 
     return render(request, 'main/form/post_delete.html', {'post': post})
 
