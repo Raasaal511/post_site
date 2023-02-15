@@ -1,10 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'main/base.html' %}
+
+{% block title %}Update{% endblock %}
+
+{% block content %}
 {{ profile }}
-</body>
-</html>
+
+<div>
+    <h4>Create post</h4>
+    <p>
+        <a href="{% url 'post_create' %}">Create</a>
+    </p>
+
+    <div class="list-group w-25 m-3">
+        {% for post in user_posts  %}
+            <a href="{% url 'post_detail' post.slug %}"
+                class="list-group-item list-group-item-action flex-column align-items-start">
+            <div class="d-flex w-1 justify-content-between">
+                <h5 class="mb-1">{{ post.title }}</h5>
+                <small>{{ post.create_at|date:"D d M Y" }}</small>
+            </div>
+                <p class="mb-1">{{ post.discription|truncatewords:17 }}</p>
+                <small>Donec id elit non mi porta.</small>
+            </a>
+
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
