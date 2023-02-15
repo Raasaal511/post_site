@@ -3,6 +3,15 @@
 {% block title %}Post detail{% endblock %}
 
 {% block content %}
+
+{% if user == post.author %}
+<div>
+    <a href="{% url 'post_create' %}">Create</a>
+    <a href="{% url 'post_update' post.slug %}">Update</a>
+    <a href="{% url 'post_delete' post.slug %}">Delete</a>
+</div>
+
+{% endif %}
 <div>
     <h4>{{ post.title }}</h4>
     <p>{{ post.body }}</p>
@@ -17,9 +26,17 @@
 
     <h3>Add comment:</h3>
     <form action="" method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Add</button>
+    {% csrf_token %}
+    {% for field in form %}
+        <div class="fieldWrapper">
+            {{ field.errors }}
+            <p>{{ field }}</p>
+            {% if field.help_text %}
+                <p class="help">{{ field.help_text|safe }}</p>
+            {% endif %}
+        </div>
+    {% endfor %}
+    <button type="submit">Add</button>
     </form>
 </div>
 {% endblock %}
