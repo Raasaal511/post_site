@@ -18,7 +18,7 @@ def user_register(request):
             login(request, user)
             return redirect('home')
 
-    return render(request, 'main/register.html', {'form': form})
+    return render(request, 'account/register.html', {'form': form})
 
 
 def user_login(request):
